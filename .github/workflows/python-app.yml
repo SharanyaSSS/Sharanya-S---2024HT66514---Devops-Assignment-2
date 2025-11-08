@@ -50,5 +50,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: yourusername/aceest-fitness:v1.0
-          
+          tags: sharanya87404/aceest-fitness:v1.0
+
