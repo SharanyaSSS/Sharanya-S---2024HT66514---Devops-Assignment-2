@@ -5,4 +5,4 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "ACEest_Fitness_v1_0.py"]
+CMD ["python", "app.py"]
