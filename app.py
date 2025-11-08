@@ -1,19 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, request, redirect, render_template
 
 app = Flask(__name__)
 workouts = []
 
 @app.route('/')
 def index():
-    return '''
-        <h2>Add Workout</h2>
-        <form method="post" action="/add">
-            Workout: <input name="workout"><br>
-            Duration: <input name="duration"><br>
-            <input type="submit" value="Add Workout">
-        </form>
-        <a href="/workouts">View Workouts</a>
-    '''
+    return render_template('index.html')
 
 @app.route('/add', methods=['POST'])
 def add_workout():
@@ -25,11 +17,7 @@ def add_workout():
 
 @app.route('/workouts')
 def view_workouts():
-    html = '<h2>Logged Workouts</h2><ul>'
-    for w in workouts:
-        html += f"<li>{w['workout']} - {w['duration']} minutes</li>"
-    html += '</ul><a href="/">Back</a>'
-    return html
+    return render_template('workouts.html', workouts=workouts)
 
 if __name__ == '__main__':
     app.run(debug=True)
