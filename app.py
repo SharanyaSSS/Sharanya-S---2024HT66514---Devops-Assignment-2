@@ -17,7 +17,7 @@ def add_workout():
 
 @app.route('/workouts')
 def view_workouts():
-    return render_template('workouts.html', workouts=workouts)
-
+   return open('index.html').read()
+    
 if __name__ == '__main__':
     app.run(debug=True)
