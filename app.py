@@ -5,7 +5,7 @@ workouts = []
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', workouts=workouts)
 
 @app.route('/add', methods=['POST'])
 def add_workout():
@@ -13,12 +13,5 @@ def add_workout():
     duration = request.form['duration']
     if workout and duration.isdigit():
         workouts.append({'workout': workout, 'duration': int(duration)})
-    return redirect('/workouts')
+    return redirect('/')
 
-@app.route('/workouts')
-def view_workouts():
-   return open('index.html').read()
-    
-if __name__ == '__main__':
-    app.run(debug=True)
-    
