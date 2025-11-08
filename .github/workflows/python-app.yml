@@ -51,3 +51,4 @@ jobs:
           context: .
           push: true
           tags: yourusername/aceest-fitness:v1.0
+          
