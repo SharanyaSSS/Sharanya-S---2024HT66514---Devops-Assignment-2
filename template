@@ -1,0 +1,7 @@
+<h2>Add Workout</h2>
+<form method="post" action="/add">
+  Workout: <input name="workout"><br>
+  Duration: <input name="duration"><br>
+  <input type="submit" value="Add Workout">
+</form>
+<a href="/workouts">View Workouts</a>
